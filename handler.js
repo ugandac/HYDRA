@@ -526,8 +526,8 @@ export async function participantsUpdate({ id, participants, action }) {
             ppgp = await this.profilePictureUrl(id, 'image')
           } catch (error) {
             console.error(`Error retrieving profile picture: ${error}`)
-            pp = 'https://i.imgur.com/tStJm2M.jpeg' // Assign default image URL
-            ppgp = 'https://i.imgur.com/tStJm2M.jpeg' // Assign default image URL
+            pp = 'https://i.imgur.com/Z5R5fvO.jpeg' // Assign default image URL
+            ppgp = 'https://i.imgur.com/6wdhrq9.jpeg' // Assign default image URL
           } finally {
             let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
               .replace('@group', await this.getName(id))
@@ -537,14 +537,14 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Welcome, ${await this.getName(user)}, our ${nthMember}th member`
 
-            let welcomeApiUrl = `https://i.imgur.com/tStJm2M.jpeg${encodeURIComponent(
+            let welcomeApiUrl = `https://i.imgur.com/Z5R5fvO.jpeg${encodeURIComponent(
               await this.getName(user)
             )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
               ppgp
             )}&memberCount=${encodeURIComponent(
               nthMember.toString()
             )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://i.imgur.com/tStJm2M.jpeg'
+              'https://i.imgur.com/tUqZbZd.jpeg'
             )}`
 
             try {
@@ -556,10 +556,10 @@ export async function participantsUpdate({ id, participants, action }) {
                 contextInfo: {
                   mentionedJid: [user],
                   externalAdReply: {
-                    title: 'FIRE MD',
+                    title: 'HYDRA',
                     body: 'welcome to Group',
                     thumbnailUrl: welcomeApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/HdVppfPgGL4KM0QNqZyadR',
+                    sourceUrl: 'https://chat.whatsapp.com/I5xIShFtrk43tfaWEmppNH',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
@@ -583,8 +583,8 @@ export async function participantsUpdate({ id, participants, action }) {
             ppgp = await this.profilePictureUrl(id, 'image')
           } catch (error) {
             console.error(`Error retrieving profile picture: ${error}`)
-            pp = 'https://i.imgur.com/tStJm2M.jpeg' // Assign default image URL
-            ppgp = 'https://i.imgur.com/tStJm2M.jpeg' // Assign default image URL
+            pp = 'https://i.imgur.com/tUqZbZd.jpeg' // Assign default image URL
+            ppgp = 'https://i.imgur.com/zREk0PM.jpeg' // Assign default image URL
           } finally {
             let text = (chat.sBye || this.bye || conn.bye || 'HELLO, @user').replace(
               '@user',
@@ -594,14 +594,14 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Goodbye, our ${nthMember}th group member`
 
-            let leaveApiUrl = `https://i.imgur.com/tStJm2M.jpeg${encodeURIComponent(
+            let leaveApiUrl = `https://i.imgur.com/Z5R5fvO.jpeg${encodeURIComponent(
               await this.getName(user)
             )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
               ppgp
             )}&memberCount=${encodeURIComponent(
               nthMember.toString()
             )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://i.imgur.com/tStJm2M.jpeg'
+              'https://i.imgur.com/Z5R5fvO.jpeg'
             )}`
 
             try {
@@ -613,10 +613,10 @@ export async function participantsUpdate({ id, participants, action }) {
                 contextInfo: {
                   mentionedJid: [user],
                   externalAdReply: {
-                    title: 'FIRE MD',
+                    title: 'HYDRA',
                     body: 'Goodbye from  Group',
                     thumbnailUrl: leaveApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/HdVppfPgGL4KM0QNqZyadR',
+                    sourceUrl: 'https://chat.whatsapp.com/I5xIShFtrk43tfaWEmppNH',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
