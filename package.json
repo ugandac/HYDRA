@@ -1,7 +1,7 @@
 {
-    "name": "FIRE MD",
+    "name": "HYDRA",
     "version": "2.1.0",
-    "description": "A FIRE NATION  BY OPAKSFIRE",
+    "description": "BOT DEVELOPED BY ARLODRAGON",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -17,16 +17,16 @@
         "test": "node test.js"
     },
     "keywords": [],
-    "homepage": "https://github.com/Opaksfire/FIRE-MD/",
+    "homepage": "https://github.com/Kingdragony/HYDRA/",
     "author": {
         "name": "OPAKSFIRE"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Opaksfire/FIRE-MD.git"
+        "url": "git+https://github.com/Kingdragony/HYDRA.git"
     },
     "bugs": {
-        "url": "https://github.com/Opaksfire/FIRE-MD/issues"
+        "url": "https://github.com/Kingdragony/HYDRA/issues"
     },
     "license": "Apache License 2.0",
     "dependencies": {
