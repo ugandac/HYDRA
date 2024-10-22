@@ -1,21 +1,21 @@
 {
-  "name": "FIRE MD",
-  "description": " BRINGING FORTH A NEW REVOLUTION.",
+  "name": "HYDRA",
+  "description": " DEVELOPED BY ARLODRAGON .",
   "keywords": [
-    "FIRE MD"
+    "HYDRA"
   ],
-  "repository": "https://github.com/Opaksfire/FIRE-MD/tree/main",
+  "repository": "https://github.com/Kingdragony/HYDRA/tree/main",
   "stack": "container",
   "env": {
     "OWNERS": {
       "description": "owner numbers",
       "required": true,
-      "value": "2349013432338;opaksfire"
+      "value": "254746764468;Kingdragony"
     },
     "BOTNAME": {
       "description": "Give your BOT a name",
       "required": true,
-      "value": "FIRE MD"
+      "value": "HYDRA"
     },
     "DATABASE_URL": {
       "description": "your mongodb database url",
@@ -30,7 +30,7 @@
     "MODE": {
       "description": "mode public or private",
       "required": true,
-      "value": "public"
+      "value": "private"
     },
     "PREFIX": {
       "description": "put any one symbol here except @ and + , leave it Blank if you want to use multiple prefix",
@@ -60,7 +60,7 @@
     "antidelete": {
       "description": "bot will forward deleted messages if you make it true",
       "required": false,
-      "value": "false"
+      "value": "true"
     },
      "REMOVEBG_KEY": {
       "description": "your RemoveBg api key",
