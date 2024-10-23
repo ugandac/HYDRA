@@ -82,7 +82,6 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
         title: '𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓',
         body: '🄷🅈🄳🅁🄰🄼🄴🄽🅄',
         thumbnailUrl: 'https://i.imgur.com/koGIjPu.jpeg',
-        sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
         renderLargerThumbnail: false,
       },
