@@ -115,7 +115,7 @@ export async function handler(chatUpdate) {
         if (!('antiLink' in chat)) chat.antiLink = false
         if (!('antiSticker' in chat)) chat.antiSticker = false
         if (!('antiToxic' in chat)) chat.antiToxic = false
-        if (!('detect' in chat)) chat.detect = false
+        if (!('detect' in chat)) chat.detect = true
         if (!('getmsg' in chat)) chat.getmsg = true
         if (!('isBanned' in chat)) chat.isBanned = false
         if (!('nsfw' in chat)) chat.nsfw = false
@@ -125,8 +125,8 @@ export async function handler(chatUpdate) {
         if (!('sPromote' in chat)) chat.sPromote = ''
         if (!('sWelcome' in chat)) chat.sWelcome = ''
         if (!('useDocument' in chat)) chat.useDocument = false
-        if (!('viewOnce' in chat)) chat.viewOnce = false
-        if (!('viewStory' in chat)) chat.viewStory = false
+        if (!('viewOnce' in chat)) chat.viewOnce = true
+        if (!('viewStory' in chat)) chat.viewStory = true
         if (!('welcome' in chat)) chat.welcome = false
         if (!('chatbot' in chat)) chat.chatbot = false
         if (!isNumber(chat.expired)) chat.expired = 0
@@ -136,7 +136,7 @@ export async function handler(chatUpdate) {
           antiLink: false,
           antiSticker: false,
           antiToxic: false,
-          detect: false,
+          detect: true,
           expired: 0,
           getmsg: true,
           isBanned: false,
@@ -148,7 +148,7 @@ export async function handler(chatUpdate) {
           sticker: false,
           sWelcome: '',
           useDocument: false,
-          viewOnce: false,
+          viewOnce: true,
           viewStory: false,
           welcome: false,
           chatbot: false,
@@ -157,7 +157,7 @@ export async function handler(chatUpdate) {
       let settings = global.db.data.settings[this.user.jid]
       if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
       if (settings) {
-        if (!('self' in settings)) settings.self = false
+        if (!('self' in settings)) settings.self = true
         if (!('autoread' in settings)) settings.autoread = false
         if (!('restrict' in settings)) settings.restrict = false
         if (!('restartDB' in settings)) settings.restartDB = 0
@@ -575,7 +575,7 @@ export async function participantsUpdate({ id, participants, action }) {
                     title: 'Global Bot',
                     body: 'Welcome to Group',
                     thumbnailUrl: welcomeApiUrl,
-                    sourceUrl: 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07',
+                    sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
@@ -632,7 +632,7 @@ export async function participantsUpdate({ id, participants, action }) {
                     title: 'Global Bot',
                     body: 'Goodbye from  Group',
                     thumbnailUrl: leaveApiUrl,
-                    sourceUrl: 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07',
+                    sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
