@@ -48,11 +48,11 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   const infoText = `
 > 𝗛𝗬𝗗𝗥𝗔
 - *${ucpn}* 
-┏━━━━━━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
 ┃   🗽 𝐒𝐜 𝐏𝐮𝐛𝐥𝐢𝐜 𝖇𝖞 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓 
 ┃   🦅 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓
 ┃   🌐 𝐔𝐬𝐞𝐫 : @${m.sender.split('@')[0]}
-┏━━━━━━━━━━━━━━━━
+┏━━━━━━━━━━━━━
 ┃🦂 ❖ 𝐕𝐢𝐫𝐮𝐬𝐦𝐞𝐧𝐮
 ┃⚙️ ❖ 𝐬𝐞𝐭𝐭𝐢𝐧𝐠𝐬
 ┃🔊 ❖ 𝐆𝐫𝐨𝐮𝐩𝐦𝐞𝐧𝐮
@@ -64,7 +64,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 ┃🖲️ ❖ 𝐏𝐮𝐬𝐡𝐦𝐞𝐧𝐮
 ┃💳 ❖ 𝐂𝐫𝐞𝐝𝐢𝐭𝐬
 ┃🛰️ ❖ 𝐌𝐞𝐧𝐮𝐭𝐲𝐩𝐞
-┗━━━━━━━━━━━━━━━━━━━━━
+┗━━━━━━━━━━━━
  `
   const { result, key, timeout } = await conn.sendMessage(
     m.chat,
@@ -82,7 +82,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
         title: '𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓',
         body: '🄷🅈🄳🅁🄰🄼🄴🄽🅄',
         thumbnailUrl: 'https://i.imgur.com/koGIjPu.jpeg',
-        sourceUrl: '',
+        sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
         renderLargerThumbnail: false,
       },
@@ -93,7 +93,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   )
 
   // Save the menu options to firemd
-  conn.firemdmenu[m.sender] = {
+  conn.hydramenu[m.sender] = {
     result,
     key,
     timeout: setTimeout(() => {
@@ -106,9 +106,9 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 }
 
 handler.before = async (m, { conn }) => {
-  conn.firemdmenu = conn.firemdmenu ? conn.firemdmenu : {}
-  if (m.isBaileys || !(m.sender in conn.firemdmenu)) return
-  const { result, key, timeout } = conn.firemdmenu[m.sender]
+  conn.hydramenu = conn.hydramenu ? conn.hydramenu : {}
+  if (m.isBaileys || !(m.sender in conn.hydramenu)) return
+  const { result, key, timeout } = conn.hydramenu[m.sender]
   if (!m.quoted || m.quoted.id !== key.id || !m.text) return
   const choice = m.text.trim()
 
