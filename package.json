@@ -1,7 +1,7 @@
 {
-    "name": "HYDRA",
-    "version": "2.1.0",
-    "description": "BOT DEVELOPED BY ARLODRAGON",
+    "name": "GLOBAL MD",
+    "version": "3.1.0",
+    "description": "Advanced WhatsApp",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -14,37 +14,49 @@
     },
     "scripts": {
         "start": "node index.js",
-        "test": "node test.js"
+        "test": "node bot.js"
     },
-    "keywords": [],
-    "homepage": "https://github.com/Kingdragony/HYDRA/",
+    "keywords": [
+        "termux-whatsapp-bot",
+        "whatsapp-bot",
+        "whatsapp",
+        "js-whatsapp",
+        "whatsapp",
+        "guru-bot",
+        "Global-bot-md",
+        "multi-device",
+        "MD",
+        "baileys-md"
+    ],
+    "homepage": "https://github.com/GlobalTechInfo/GLOBAL-MD",
     "author": {
-        "name": "OPAKSFIRE"
+        "name": "GlobalTechInfo"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Kingdragony/HYDRA.git"
+        "url": "git+https://github.com/GlobalTechInfo/GLOBAL-MD.git"
     },
     "bugs": {
-        "url": "https://github.com/Kingdragony/HYDRA/issues"
+        "url": "https://github.com/GlobalTechInfo/GLOBAL-MD/issues"
     },
     "license": "Apache License 2.0",
     "dependencies": {
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "*",
+        "@bochilteam/scraper": "^4.2.4",
         "@google/generative-ai": "0.1.3",
         "@shineiichijo/marika": "^2.0.6",
+        "@StarlightsTeam/Scraper": "github:StarlightsTeam/StarlightsTeam-Scraper",
         "@vitalets/google-translate-api": "^9.2.0",
         "@whiskeysockets/baileys": "^6.6.0",
+        "@SumiFX/Scraper": "github:SumiFX/SumiFX-Scraper",
         "@xct007/frieren-scraper": "*",
         "@xct007/tiktok-scraper": "*",
         "acrcloud": "^1.4.0",
-        "api-dylux": "^1.8.3",
         "aptoide-scraper": "^1.0.1",
         "awesome-phonenumber": "^3.4.0",
         "axios": "^1.4.0",
         "chalk": "^5.1.0",
-        "cheerio": "npm:cheerio@1.0.0-rc.12",
+        "cheerio": "^1.0.0-rc.12",
         "chess.js": "*",
         "colors": "1.4.0",
         "didyoumean": "^1.2.2",
@@ -56,6 +68,7 @@
         "figlet": "^1.7.0",
         "file-type": "^18.0.0",
         "fluent-ffmpeg": "^2.1.2",
+        "ffmpeg": "^0.0.4",
         "formdata-node": "^5.0.0",
         "g-i-s": "^2.1.6",
         "google-it": "^1.6.4",
@@ -66,7 +79,6 @@
         "imagemaker.js": "*",
         "imgur": "2.3.0",
         "instagram-url-direct": "^1.0.12",
-        "install": "^0.13.0",
         "jimp": "^0.16.1",
         "jsdom": "^20.0.1",
         "link-preview-js": "^3.0.0",
@@ -78,7 +90,6 @@
         "node-fetch": "^3.3.1",
         "node-gtts": "^2.0.2",
         "node-webpmux": "^3.1.3",
-        "npm": "^10.8.3",
         "pdfkit": "^0.13.0",
         "perf_hooks": "^0.0.1",
         "pino": "^8.6.1",
@@ -96,9 +107,12 @@
         "url-regex-safe": "^3.0.0",
         "wa-sticker-formatter": "^4.3.2",
         "xfarr-api": "^1.0.3",
+        "api-dylux": "^1.8.3",
+        "yt-search": "^2.10.4",
+        "ytdl-core": "github:HanSamu-27/ytdl-core#main",
         "yargs": "^17.6.0",
         "youtube-yts": "^2.0.0",
-        "youtubedl-core": "npm:@distube/ytdl-core"
+        "youtubedl-core": "^4.11.7"
     },
     "overrides": {
         "cache-manager": "5.2.2"
