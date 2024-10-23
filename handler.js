@@ -20,7 +20,7 @@ const delay = ms =>
     }, ms)
   )
 
-/**
+/** 
  * Handle messages upsert
  * @param {import("@whiskeysockets/baileys").BaileysEventMap<unknown>["messages.upsert"]} groupsUpdate
  */
@@ -72,8 +72,24 @@ export async function handler(chatUpdate) {
         if (!isNumber(user.level)) user.level = 0
         if (!('role' in user)) user.role = 'Tadpole'
         if (!('autolevelup' in user)) user.autolevelup = false
+           /*
+   Do Not Modify this Section ❌  👇👇
+   Else Relationship Features Will Not Work 😔
+   */
+   if (!('lover' in user)) user.lover = ''
+   if (!('exlover' in user)) user.exlover = ''
+   if (!('crush' in user)) user.crush = ''
+   if (!isNumber(user.excount)) user.excount = 0
       } else {
         global.db.data.users[m.sender] = {
+        lover: '',
+        exlover: '',
+        crush: '',
+        excount: 0,
+   /*
+   Do Not Modify this Section ❌  ☝️☝️
+   Else Relationship Features Will Not Work 😔
+   */
           exp: 0,
           credit: 0,
           bank: 0,
@@ -511,8 +527,8 @@ export async function participantsUpdate({ id, participants, action }) {
     welcome: '👋',
     bye: '👋',
     bug: '🐛',
-    mail: '📮',
-    owner: '👑',
+    mail: '📧',
+    owner: '😎',
   }
 
   switch (action) {
@@ -526,8 +542,8 @@ export async function participantsUpdate({ id, participants, action }) {
             ppgp = await this.profilePictureUrl(id, 'image')
           } catch (error) {
             console.error(`Error retrieving profile picture: ${error}`)
-            pp = 'https://i.imgur.com/Z5R5fvO.jpeg' // Assign default image URL
-            ppgp = 'https://i.imgur.com/6wdhrq9.jpeg' // Assign default image URL
+            pp = 'https://i.ibb.co/9HY4wjz/a4c0b1af253197d4837ff6760d5b81c0.jpg' // Assign default image URL
+            ppgp = 'https://i.ibb.co/9HY4wjz/a4c0b1af253197d4837ff6760d5b81c0.jpg' // Assign default image URL
           } finally {
             let text = (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user')
               .replace('@group', await this.getName(id))
@@ -537,14 +553,14 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Welcome, ${await this.getName(user)}, our ${nthMember}th member`
 
-            let welcomeApiUrl = `https://i.imgur.com/Z5R5fvO.jpeg${encodeURIComponent(
+            let welcomeApiUrl = `https://welcome.guruapi.tech/welcome-image?username=${encodeURIComponent(
               await this.getName(user)
             )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
               ppgp
             )}&memberCount=${encodeURIComponent(
               nthMember.toString()
             )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://i.imgur.com/tUqZbZd.jpeg'
+              'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
             )}`
 
             try {
@@ -556,10 +572,10 @@ export async function participantsUpdate({ id, participants, action }) {
                 contextInfo: {
                   mentionedJid: [user],
                   externalAdReply: {
-                    title: 'HYDRA',
-                    body: 'welcome to Group',
+                    title: 'Global Bot',
+                    body: 'Welcome to Group',
                     thumbnailUrl: welcomeApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/I5xIShFtrk43tfaWEmppNH',
+                    sourceUrl: 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
@@ -583,8 +599,8 @@ export async function participantsUpdate({ id, participants, action }) {
             ppgp = await this.profilePictureUrl(id, 'image')
           } catch (error) {
             console.error(`Error retrieving profile picture: ${error}`)
-            pp = 'https://i.imgur.com/tUqZbZd.jpeg' // Assign default image URL
-            ppgp = 'https://i.imgur.com/zREk0PM.jpeg' // Assign default image URL
+            pp = 'https://i.ibb.co/9HY4wjz/a4c0b1af253197d4837ff6760d5b81c0.jpg' // Assign default image URL
+            ppgp = 'https://i.ibb.co/9HY4wjz/a4c0b1af253197d4837ff6760d5b81c0.jpg' // Assign default image URL
           } finally {
             let text = (chat.sBye || this.bye || conn.bye || 'HELLO, @user').replace(
               '@user',
@@ -594,14 +610,14 @@ export async function participantsUpdate({ id, participants, action }) {
             let nthMember = groupMetadata.participants.length
             let secondText = `Goodbye, our ${nthMember}th group member`
 
-            let leaveApiUrl = `https://i.imgur.com/Z5R5fvO.jpeg${encodeURIComponent(
+            let leaveApiUrl = `https://welcome.guruapi.tech/leave-image?username=${encodeURIComponent(
               await this.getName(user)
             )}&guildName=${encodeURIComponent(await this.getName(id))}&guildIcon=${encodeURIComponent(
               ppgp
             )}&memberCount=${encodeURIComponent(
               nthMember.toString()
             )}&avatar=${encodeURIComponent(pp)}&background=${encodeURIComponent(
-              'https://i.imgur.com/Z5R5fvO.jpeg'
+              'https://cdn.wallpapersafari.com/71/19/7ZfcpT.png'
             )}`
 
             try {
@@ -613,10 +629,10 @@ export async function participantsUpdate({ id, participants, action }) {
                 contextInfo: {
                   mentionedJid: [user],
                   externalAdReply: {
-                    title: 'HYDRA',
+                    title: 'Global Bot',
                     body: 'Goodbye from  Group',
                     thumbnailUrl: leaveApiUrl,
-                    sourceUrl: 'https://chat.whatsapp.com/I5xIShFtrk43tfaWEmppNH',
+                    sourceUrl: 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07',
                     mediaType: 1,
                     renderLargerThumbnail: true,
                   },
@@ -841,7 +857,7 @@ export async function presenceUpdate(presenceUpdate) {
 dfail
  */
 global.dfail = (type, m, conn) => {
-  const userTag = `👋 Hai *@${m.sender.split('@')[0]}*, `
+  const userTag = `👋 Hi *@${m.sender.split('@')[0]}*, `
   const emoji = {
     general: '⚙️',
     owner: '👑',
