@@ -74,13 +74,13 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: '120363334724476325@newsletter',
-        newsletterName: 'HYDRA ©powered by 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓',
+        newsletterName: '🦅𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓 𝖎𝖘 𝖒𝖞 𝕺𝖜𝖓𝖊𝖗🦅',
         serverMessageId: -1,
       },
       forwardingScore: 999,
       externalAdReply: {
-        title: '𝖧𝖸𝖣𝖱𝖠',
-        body: 'ᴍᴇɴᴜ',
+        title: '𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓',
+        body: '🄷🅈🄳🅁🄰🄼🄴🄽🅄',
         thumbnailUrl: 'https://i.imgur.com/koGIjPu.jpeg',
         sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
