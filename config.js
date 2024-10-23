@@ -6,7 +6,7 @@ import fs from 'fs'
 import dotenv from 'dotenv'
 dotenv.config()
 
-const ownervb = process.env.OWNERS || "254793057056; ARLODRAGON"
+const ownervb = process.env.OWNERS || "923444844060"
 
 
 const ownerlist = ownervb.split(';');
@@ -21,11 +21,12 @@ for (let i = 0; i < ownerlist.length; i += 2) {
     global.owner.push(owner);
 }
 
-//global.pairingNumber = "" //put your bot number here
+//global.pairingNumber = "92xxx_number" //put your bot number here
+global.botNumber = '923051391007' //put your bot number here
 
-global.mods = ['254702713600', '254793057056']
-global.prems = ['254702713600', '254793057056', '254746764468']
-global.allowed = ['254702713600', '254793057056', '254746764468']
+global.mods = ['923444844060', '923051391007']
+global.prems = ['923444844060', '923051391007']
+global.allowed = ['923444844060', '923051391007']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = [
@@ -41,6 +42,9 @@ global.keysxteam = keysxteammm[Math.floor(keysxteammm.length * Math.random())]
 global.keysneoxrrr = ['5VC9rvNx', 'cfALv5']
 global.keysneoxr = keysneoxrrr[Math.floor(keysneoxrrr.length * Math.random())]
 global.lolkeysapi = ['GataDios']
+
+global.canal = 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07'
+
 
 global.APIs = {
   // API Prefix
@@ -70,24 +74,24 @@ global.APIKeys = {
 
 // Sticker WM
 global.botname = process.env.BOTNAME
-global.premium = 'false'
-global.packname = 'HYDRA'
-global.author = 'ARLODRAGON'
-global.menuvid = 'https://telegra.ph/file/cc872e19bc191d8fea29c.mp4'
-global.igfg = '▢ Follow on Instagram\nhttps://www.instagram.com/\n'
-global.dygp = 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q'
-global.fgsc = 'https://github.com/'
-global.fgyt = 'https://youtube.com/'
-global.fgpyp = 'https://youtube.com/'
-global.fglog = 'https://api.shannmoderz.xyz/server/file/XyjKP6IA0VnyFZF.jpg'
-global.thumb = fs.readFileSync('./Assets/images (2) (1).jpeg')
+global.premium = 'true'
+global.packname = 'GLOBAL BOT'
+global.author = 'GlobalTechInfo'
+global.menuvid = ''
+global.igfg = ' Follow on Instagram\nhttps://www.instagram.com/global.techinfo'
+global.dygp = 'https://whatsapp.com/channel/0029VagJIAr3bbVBCpEkAM07'
+global.fgsc = 'https://github.com/GlobalTechInfo/ULTRA-MD'
+global.fgyt = 'https://youtube.com/@GlobalTechInfo'
+global.fgpyp = 'https://youtube.com/@GlobalTechInfo'
+global.fglog = 'https://i.ibb.co/G2dh9cB/qasim.jpg'
+global.thumb = fs.readFileSync('./assets/qasim.jpg')
 
-global.wait = '*🛰️ _processing..._*\n*▰▰▰▱▱▱▱▱*'
-global.rwait = '🦅'
-global.dmoji = '😄'
-global.done = '🚀'
-global.error = '😞'
-global.xmoji = '📸'
+global.wait = '⏳'
+global.rwait = ''
+global.dmoji = ''
+global.done = ''
+global.error = ''
+global.xmoji = ''
 
 global.multiplier = 69
 global.maxwarn = '3'
