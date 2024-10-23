@@ -12,8 +12,7 @@ let handler = async (m, { conn }) => {
       },
     },
   }
-  let pingMsg = await conn.sendMessage(m.chat, { text: '[■■■■■■■■■■] 100%
-...' }, { quoted: fgg })
+  let pingMsg = await conn.sendMessage(m.chat, { text: '[speed...' }, { quoted: fgg })
  
   let timestamp = speed()
 
