@@ -84,7 +84,7 @@ global.fgsc = 'https://github.com/GlobalTechInfo/ULTRA-MD'
 global.fgyt = 'https://youtube.com/@GlobalTechInfo'
 global.fgpyp = 'https://youtube.com/@GlobalTechInfo'
 global.fglog = 'https://i.ibb.co/G2dh9cB/qasim.jpg'
-global.thumb = fs.readFileSync('./assets/qasim.jpg')
+global.thumb = fs.readFileSync('./Assets/images (2) (1).jpeg')
 
 global.wait = '⏳'
 global.rwait = ''
