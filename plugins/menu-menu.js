@@ -46,7 +46,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   const infoText = `
  ▒▓   𝐇𝐘𝐃𝐑𝐀   ▓▒
 - Hii ${name} user
-╔══════☙ʜʏᴅʀᴀ☙═ 
+   ⧳═══☙ʜʏᴅʀᴀ☙═⧳
 ❏ *Bot Name:* ${botname}
 ❏ *Mode:* ${mode}
 ❏ *Platform:* ${platform}
@@ -60,25 +60,11 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 ֎───᚛ᚔʜʏᴅʀᴀɪɴꜰᴏᚔ᚜───֎
 │ *${totalfeatures}* Commands
 ╰──────────⧱
-╔══════════⧐
-║ ➻ Bot Menu
-║ ➻ Owner Menu
-║ ➻ Group Menu
-║ ➻ Fun Menu
-║ ➻ Reaction Menu
-║ ➻ Downloader Menu
-║ ➻ Game Menu
-║ ➻ Logo Menu
-║ ➻ Sticker Menu
-║ ➻ Audio Menu
-║ ➻ News Menu
-║ ➻ Economy Menu
-║ ➻ Anime Menu
-║ ➻ NSFW Menu
-║ ➻ Tools Menu
-║ ➻ AI Menu
-║ ➻ Plugin Menu
-╚═══════════⧐
+⧪══════════⧭
+▒ 🛰️ɢᴘᴛ
+▒🚀ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
+ᴛʜɪꜱ ᴍᴇɴᴜ ɪꜱ ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ⌛
+⧪══════════⧭
  `
   const { result, key, timeout } = await conn.sendMessage(
     m.chat,
