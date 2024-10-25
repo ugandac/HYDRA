@@ -8,16 +8,14 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
   let usrs = glb[m.sender]
   let tag = `@${m.sender.split('@')[0]}`
   let mode = global.opts['self'] ? 'Private' : 'Public'
-
+  let vn = './Assets/mp3/Classic.mp3'
   let { age, exp, limit, level, role, registered, credit } = glb[m.sender]
   let { min, xp, max } = xpRange(level, global.multiplier)
   let name = await conn.getName(m.sender)
   let premium = glb[m.sender].premiumTime
   let prems = `${premium > 0 ? 'Premium' : 'Free'}`
   let platform = os.platform()
-
   let ucpn = `${ucapan()}`
-
   let _uptime = process.uptime() * 1000
   let _muptime
   if (process.send) {
@@ -49,15 +47,15 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
  ▒▓   𝐇𝐘𝐃𝐑𝐀   ▓▒
 - Hii ${name} user
 ╔══════☙ʜʏᴅʀᴀ☙═ 
-❢🚀 *Bot Name:* ${botname}
-❢🦅 *Mode:* ${mode}
-❢🛰️ *Platform:* ${platform}
-❢⛀  *Type:* NodeJs
-❢⛁ *Baileys:* Multi Device
-❢⛇ *Prefix:* [ *${usedPrefix}* ]
-❢❐ *Uptime:* ${muptime}
-❢⧮ *Database:*  ${totalreg}
-╚═════════⧱
+❏ *Bot Name:* ${botname}
+❏ *Mode:* ${mode}
+❏ *Platform:* ${platform}
+❏ *Type:* NodeJs
+❏ *Baileys:* Multi Device
+❏ *Prefix:* [ *${usedPrefix}* ]
+❐ *Uptime:* ${muptime}
+❏ *Database:*  ${totalreg}
+   ⧱═════════⧱
 > ©ᴀʀʟᴏᴅʀᴀɢᴏɴ\n\n
 ֎───᚛ᚔʜʏᴅʀᴀɪɴꜰᴏᚔ᚜───֎
 │ *${totalfeatures}* Commands
@@ -89,8 +87,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       mentionedJid: [m.sender],
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363334724476325@newsletter',
-        newsletterName: '⟣ᴀʀʟᴏᴅʀᴀɢᴏɴ ɪꜱ ᴍʏ ᴏᴡɴᴇʀ⟢',
+      newsletterName: '⟣ᴀʀʟᴏᴅʀᴀɢᴏɴ ɪꜱ ᴍʏ ᴏᴡɴᴇʀ⟢',
         serverMessageId: -1,
       },
       forwardingScore: 999,
