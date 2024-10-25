@@ -47,24 +47,22 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
  ▒▓   𝐇𝐘𝐃𝐑𝐀   ▓▒
 - Hii ${name} user
    ⧳═══☙ʜʏᴅʀᴀ☙═⧳
-❏ *Bot Name:* ${botname}
-❏ *Mode:* ${mode}
-❏ *Platform:* ${platform}
-❏ *Type:* NodeJs
-❏ *Baileys:* Multi Device
-❏ *Prefix:* [ *${usedPrefix}* ]
-❐ *Uptime:* ${muptime}
-❏ *Database:*  ${totalreg}
-   ⧱═════════⧱
-> ©ᴀʀʟᴏᴅʀᴀɢᴏɴ\n\n
+❏📚 *Mode:* ${mode}
+❏💻 *Platform:* ${platform}
+❏🌐 *Baileys:* Multi Device
+❏🔓 *Prefix:* [ *${usedPrefix}* ]
+❐🕰️ *Uptime:* ${muptime}
+❏🗂️ *Database:*  ${totalreg}
+   ⧱════════════⧱
+> ©ᴀʀʟᴏᴅʀᴀɢᴏɴ
 ֎───᚛ᚔʜʏᴅʀᴀɪɴꜰᴏᚔ᚜───֎
 │ *${totalfeatures}* Commands
 ╰──────────⧱
-⧪══════════⧭
+  ⧪═══════════════⧭
 ▒ 🛰️ɢᴘᴛ
 ▒🚀ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
 ᴛʜɪꜱ ᴍᴇɴᴜ ɪꜱ ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ⌛
-⧪══════════⧭
+   ⧪══════════════⧭
  `
   const { result, key, timeout } = await conn.sendMessage(
     m.chat,
