@@ -1,1 +1,277 @@
-const _0x455de7=_0x2b6f;function _0x578c(){const _0x196510=['url','Video','title','thumbnail','783475pFJLIq','\x20ms','wait','*-*\x20*Fetching*\x20:\x20','quick_reply','all','videos','yts\x20','582620zFobSH','108918fFcNtJ','status','help','stringify','*[\x20YOUTUBE\x20PLAY\x20]*\x0a\x0a','ytv\x20','sSearch','videoId','error','Yoasobi\x20idol','play','408770CEeIlh','132BqHXUj','6721BSDADL','ago','downloader','exports','*-*\x20*Url*\x20:\x20','9452msXLMb','tags','sendIAMessage','yta\x20','reply','*-*\x20*Author*\x20:\x20','views','*-*\x20*Published*\x20:\x20','footer','1312952WRxXHA','*-*\x20*Views*\x20:\x20','Audio'];_0x578c=function(){return _0x196510;};return _0x578c();}(function(_0x377d2b,_0x196200){const _0x275ed7=_0x2b6f,_0x58ac12=_0x377d2b();while(!![]){try{const _0x21d306=parseInt(_0x275ed7(0xd1))/0x1+parseInt(_0x275ed7(0xd6))/0x2*(parseInt(_0x275ed7(0xd0))/0x3)+parseInt(_0x275ed7(0xc3))/0x4+parseInt(_0x275ed7(0xcf))/0x5+-parseInt(_0x275ed7(0xc4))/0x6+-parseInt(_0x275ed7(0xbb))/0x7+-parseInt(_0x275ed7(0xdf))/0x8;if(_0x21d306===_0x196200)break;else _0x58ac12['push'](_0x58ac12['shift']());}catch(_0x2b92f4){_0x58ac12['push'](_0x58ac12['shift']());}}}(_0x578c,0x241a5));const yts=require('yt-search'),handler=async(_0x78255f,{conn:_0xec7110,text:_0x12b642,usedPrefix:_0x4db40c,command:_0x23999c,Func:_0x3352fa})=>{const _0x5e6e12=_0x2b6f;if(!_0x12b642)return _0x78255f[_0x5e6e12(0xda)](_0x3352fa['example'](_0x4db40c,_0x23999c,_0x5e6e12(0xcd)));_0x78255f[_0x5e6e12(0xda)](global['status'][_0x5e6e12(0xbd)]);try{let _0x1152ff=await yts(_0x12b642),_0xcea961=_0x1152ff,_0x4ef50a=new Date(),_0x3bcccf=_0x5e6e12(0xc8);_0x3bcccf+='*-*\x20*Title*\x20:\x20'+_0xcea961[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xb9)]+'\x0a',_0x3bcccf+=_0x5e6e12(0xdb)+_0xcea961[_0x5e6e12(0xc0)][0x0]['author']['name']+'\x0a',_0x3bcccf+='*-*\x20*Video\x20ID*\x20:\x20'+_0xcea961[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xcb)]+'\x0a',_0x3bcccf+=_0x5e6e12(0xdd)+_0xcea961[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xd2)]+'\x0a',_0x3bcccf+=_0x5e6e12(0xe0)+_0xcea961[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xdc)]+'\x0a',_0x3bcccf+=_0x5e6e12(0xd5)+_0xcea961[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xe2)]+'\x0a',_0x3bcccf+=_0x5e6e12(0xbe)+((new Date()-_0x4ef50a)*0x1+_0x5e6e12(0xbc));const _0x5d3220=[{'name':_0x5e6e12(0xbf),'buttonParamsJson':JSON[_0x5e6e12(0xc7)]({'display_text':_0x5e6e12(0xe1),'id':_0x4db40c+_0x5e6e12(0xd9)+_0xcea961[_0x5e6e12(0xc1)][0x0]['url']})},{'name':_0x5e6e12(0xbf),'buttonParamsJson':JSON[_0x5e6e12(0xc7)]({'display_text':_0x5e6e12(0xe3),'id':_0x4db40c+_0x5e6e12(0xc9)+_0xcea961['videos'][0x0][_0x5e6e12(0xe2)]})},{'name':_0x5e6e12(0xbf),'buttonParamsJson':JSON[_0x5e6e12(0xc7)]({'display_text':_0x5e6e12(0xca),'id':_0x4db40c+_0x5e6e12(0xc2)+_0xcea961[_0x5e6e12(0xc1)][0x0][_0x5e6e12(0xb9)]})}];_0xec7110[_0x5e6e12(0xd8)](_0x78255f['chat'],_0x5d3220,_0x78255f,{'content':_0x3bcccf,'footer':global[_0x5e6e12(0xde)],'media':_0x1152ff[_0x5e6e12(0xc0)][0x0][_0x5e6e12(0xba)]});}catch(_0x5d90ff){return _0x78255f[_0x5e6e12(0xda)](global[_0x5e6e12(0xc5)][_0x5e6e12(0xcc)]);}};function _0x2b6f(_0x4cfe01,_0x90625){const _0x578c0f=_0x578c();return _0x2b6f=function(_0x2b6fd8,_0x240e14){_0x2b6fd8=_0x2b6fd8-0xb9;let _0xf9692d=_0x578c0f[_0x2b6fd8];return _0xf9692d;},_0x2b6f(_0x4cfe01,_0x90625);}handler[_0x455de7(0xc6)]=['play']['map'](_0x525d1e=>_0x525d1e+'\x20*title*'),handler[_0x455de7(0xd7)]=[_0x455de7(0xd3)],handler['command']=[_0x455de7(0xce)],handler['limit']=0x3,module[_0x455de7(0xd4)]=handler;
+import ytdl from '@distube/ytdl-core';
+import ytSearch from 'yt-search';
+import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+const { generateWAMessageFromContent, proto } = pkg;
+
+const searchResultsMap = new Map();
+let searchIndex = 1; 
+
+const playcommand = async (m, Fox) => {
+  let selectedListId;
+  const selectedButtonId = m?.message?.templateButtonReplyMessage?.selectedId;
+  const interactiveResponseMessage = m?.message?.interactiveResponseMessage;
+
+  if (interactiveResponseMessage) {
+    const paramsJson = interactiveResponseMessage.nativeFlowResponseMessage?.paramsJson;
+    if (paramsJson) {
+      const params = JSON.parse(paramsJson);
+      selectedListId = params.id;
+    }
+  }
+
+  const selectedId = selectedListId || selectedButtonId;
+
+  const prefixMatch = m.body.match(/^[\\/!#.]/);
+  const prefix = prefixMatch ? prefixMatch[0] : '/';
+  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+  const text = m.body.slice(prefix.length + cmd.length).trim();
+
+  const validCommands = ['play', 'song'];
+
+  if (validCommands.includes(cmd)) {
+    if (!text) {
+      return m.reply('Please provide a search query.');
+    }
+
+    try {
+      await m.React("🎧");
+
+ 
+      const searchResults = await ytSearch(text);
+      const videos = searchResults.videos.slice(0, 5); 
+
+      if (videos.length === 0) {
+        m.reply('No results found.');
+        await m.React("❌");
+        return;
+      }
+
+
+      videos.forEach((video, index) => {
+        const uniqueId = searchIndex + index;
+        searchResultsMap.set(uniqueId, video);
+      });
+
+
+      const currentResult = searchResultsMap.get(searchIndex);
+      const buttons = [
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "ᴀᴜᴅɪᴏ",
+            id: `media_audio_${searchIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "ᴠɪᴅᴇᴏ",
+            id: `media_video_${searchIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "ᴀᴜᴅɪᴏ ᴅᴏᴄᴜᴍᴇɴᴛ",
+            id: `media_audiodoc_${searchIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "ᴠɪᴅᴇᴏ ᴅᴏᴄᴜᴍᴇɴᴛ",
+            id: `media_videodoc_${searchIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "ɴᴇxᴛ",
+            id: `next_${searchIndex + 1}`
+          })
+        }
+      ];
+
+      const msg = generateWAMessageFromContent(m.from, {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: proto.Message.InteractiveMessage.create({
+              body: proto.Message.InteractiveMessage.Body.create({
+                text: `YouTube Search\n\n*🔍Title:* ${currentResult.title}\n*✍️Author:* ${currentResult.author.name}\n*🥸 Views:* ${currentResult.views}\n*🏮 Duration:* ${currentResult.timestamp}\n`
+              }),
+              footer: proto.Message.InteractiveMessage.Footer.create({
+                text: "> ©ʀᴇᴅ-ꜰᴏx-ᴍᴅ"
+              }),
+              header: proto.Message.InteractiveMessage.Header.create({
+                 ...(await prepareWAMessageMedia({ image: { url: `https://i.ibb.co/DgXWV3p/Picsart-24-06-23-20-21-28-866.png` } }, { upload: Fox.waUploadToServer })),
+                title: "",
+                gifPlayback: true,
+                subtitle: "",
+                hasMediaAttachment: false 
+              }),
+              
+              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                buttons
+              }),
+              contextInfo: {
+                mentionedJid: [m.sender],
+                forwardingScore: 9999,
+                isForwarded: true,
+              }
+            }),
+          },
+        },
+      }, {});
+
+      await Fox.relayMessage(msg.key.remoteJid, msg.message, {
+        messageId: msg.key.id
+      });
+      await m.React("✅");
+
+      searchIndex += 1; 
+    } catch (error) {
+      console.error("Error processing your request:", error);
+      m.reply('Error processing your request.');
+      await m.React("❌");
+    }
+  } else if (selectedId) { 
+    if (selectedId.startsWith('next_')) {
+      const nextIndex = parseInt(selectedId.replace('next_', ''));
+      const currentResult = searchResultsMap.get(nextIndex);
+
+      if (!currentResult) {
+        return m.reply('No more results.');
+      }
+      const buttons = [
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "🎧 Audio",
+            id: `media_audio_${nextIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "🎥 Video",
+            id: `media_video_${nextIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "🎵 Audio Document",
+            id: `media_audiodoc_${nextIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "🎦 Video Document",
+            id: `media_videodoc_${nextIndex}`
+          })
+        },
+        {
+          "name": "quick_reply",
+          "buttonParamsJson": JSON.stringify({
+            display_text: "⏩ Next",
+            id: `next_${nextIndex + 1}`
+          })
+        }
+      ];
+
+      const msg = generateWAMessageFromContent(m.from, {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadata: {},
+              deviceListMetadataVersion: 2
+            },
+            interactiveMessage: proto.Message.InteractiveMessage.create({
+              body: proto.Message.InteractiveMessage.Body.create({
+                text: `YouTube Search\n\n*🔍Title:* ${currentResult.title}\n*✍️ Author:* ${currentResult.author.name}\n*🥸 Views:* ${currentResult.views}\n*🏮 Duration:* ${currentResult.timestamp}\n`
+              }),
+              footer: proto.Message.InteractiveMessage.Footer.create({
+                text: "> ©ʀᴇᴅ-ꜰᴏx-ᴍᴅ"
+              }),
+              header: proto.Message.InteractiveMessage.Header.create({
+                 ...(await prepareWAMessageMedia({ image: { url: `https://i.ibb.co/DgXWV3p/Picsart-24-06-23-20-21-28-866.png` } }, { upload: Fox.waUploadToServer })),
+                title: "",
+                gifPlayback: true,
+                subtitle: "",
+                hasMediaAttachment: false 
+              }),
+              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                buttons
+              }),
+              contextInfo: {
+                mentionedJid: [m.sender],
+                forwardingScore: 9999,
+                isForwarded: true,
+              }
+            }),
+          },
+        },
+      }, {});
+
+      await Fox.relayMessage(msg.key.remoteJid, msg.message, {
+        messageId: msg.key.id
+      });
+    } else if (selectedId.startsWith('media_')) {
+      const parts = selectedId.split('_');
+      const type = parts[1];
+      const key = parseInt(parts[2]);
+      const selectedMedia = searchResultsMap.get(key);
+
+      if (selectedMedia) {
+        try {
+          const videoUrl = selectedMedia.url;
+          let finalMediaBuffer, mimeType, content;
+
+          const stream = ytdl(videoUrl, { filter: type === 'audio' || type === 'audiodoc' ? 'audioonly' : 'video' });
+
+          if (type === 'audio' || type === 'audiodoc') {
+            finalMediaBuffer = await getStreamBuffer(stream);
+            mimeType = 'audio/mp3';
+          } else {
+            finalMediaBuffer = await getStreamBuffer(stream);
+            mimeType = 'video/mp4';
+          }
+
+          const fileSizeInMB = finalMediaBuffer.length / (1024 * 1024);
+
+          if (type === 'audio' && fileSizeInMB <= 300) {
+            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: 'Downloaded by ʀɛɖ_ʄօӼ-ʍɖ' };
+          } else if (type === 'video' && fileSizeInMB <= 300) {
+            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: 'Downloaded by ʀɛɖ_ʄօӼ-ʍɖ' };
+          } else if (type === 'audiodoc') {
+            content = { document: finalMediaBuffer, mimetype: 'audio/mp3', fileName: `${selectedMedia.title}.mp3` };
+          } else if (type === 'videodoc') {
+            content = { document: finalMediaBuffer, mimetype: 'video/mp4', fileName: `${selectedMedia.title}.mp4`, caption: `Downloading video: ${selectedMedia.title}` };
+          }
+
+          await Fox.sendMessage(m.from, content, { quoted: m });
+        } catch (error) {
+          console.error("Error processing your request:", error);
+          m.reply('Error processing your request.');
+          await m.React("❌");
+        }
+      }
+    }
+  }
+};
+
+const getStreamBuffer = async (stream) => {
+  const chunks = [];
+  return new Promise((resolve, reject) => {
+    stream.on('data', chunk => chunks.push(chunk));
+    stream.on('end', () => resolve(Buffer.concat(chunks)));
+    stream.on('error', err => reject(err));
+  });
+};
+
+export default playcommand;
