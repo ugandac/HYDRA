@@ -18,16 +18,16 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/Kingdragony/TYRAX",
+  "homepage": "https://github.com/Kingdragony/HYDRA",
   "author": {
     "name": "Arlodragon"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kingdragony/TYRAX.git"
+    "url": "git+https://github.com/Kingdragony/HYDRA.git"
   },
   "bugs": {
-    "url": "https://github.com/Kingdragony/TYRAX/issues"
+    "url": "https://github.com/Kingdragony/HYDRA/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
