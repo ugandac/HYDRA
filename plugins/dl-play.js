@@ -143,7 +143,7 @@ async function ytMp3(url) {
         }
       }
       const resultFix = result.filter((x) => x.audio != undefined && x.size != undefined);
-      const tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].audio}`);
+      const tiny = await axios.get(`https://widipe.com/download/ytdl?url=${resultFix[0].audio}`);
       const tinyUrl = tiny.data;
       const title = getUrl.videoDetails.title;
       const thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
@@ -165,7 +165,7 @@ async function ytMp4(url) {
         }
       }
       const resultFix = result.filter((x) => x.video != undefined && x.size != undefined && x.quality != undefined);
-      const tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].video}`);
+      const tiny = await axios.get(`https://widipe.com/download/ytdl?url=${resultFix[0].video}`);
       const tinyUrl = tiny.data;
       const title = getUrl.videoDetails.title;
       const thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
