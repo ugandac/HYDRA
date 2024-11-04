@@ -1,277 +1,216 @@
-import ytdl from '@distube/ytdl-core';
-import ytSearch from 'yt-search';
-import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
-const { generateWAMessageFromContent, proto } = pkg;
+import fetch from 'node-fetch'
+import yts from 'yt-search'
+import ytdl from 'ytdl-core'
+import axios from 'axios'
+import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 
-const searchResultsMap = new Map();
-let searchIndex = 1; 
+var handler = async (m, { conn, command, args, text, usedPrefix }) => {
 
-const playcommand = async (m, Fox) => {
-  let selectedListId;
-  const selectedButtonId = m?.message?.templateButtonReplyMessage?.selectedId;
-  const interactiveResponseMessage = m?.message?.interactiveResponseMessage;
+if (!text) return conn.reply(m.chat, `🎌 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} New West - Those Eyes`,  m, fake, )
+m.react(rwait)
 
-  if (interactiveResponseMessage) {
-    const paramsJson = interactiveResponseMessage.nativeFlowResponseMessage?.paramsJson;
-    if (paramsJson) {
-      const params = JSON.parse(paramsJson);
-      selectedListId = params.id;
-    }
-  }
+try {
 
-  const selectedId = selectedListId || selectedButtonId;
+const yt_play = await search(args.join(' '))
+let additionalText = ''
+if (command === 'play') {
+additionalText = 'audio'
+} else if (command === 'play2') {
+additionalText = 'video'}
 
-  const prefixMatch = m.body.match(/^[\\/!#.]/);
-  const prefix = prefixMatch ? prefixMatch[0] : '/';
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim();
+let texto1 = `*∘ Título*
+${yt_play[0].title}
 
-  const validCommands = ['play', 'song'];
+*∘ Duración* 
+${secondString(yt_play[0].duration.seconds)}
 
-  if (validCommands.includes(cmd)) {
-    if (!text) {
-      return m.reply('Please provide a search query.');
-    }
+*∘ Autor*
+${yt_play[0].author.name}
 
-    try {
-      await m.React("🎧");
+*∘ Canal*
+${yt_play[0].author.url}
 
- 
-      const searchResults = await ytSearch(text);
-      const videos = searchResults.videos.slice(0, 5); 
+*∘ Enlace*
+${yt_play[0].url}
 
-      if (videos.length === 0) {
-        m.reply('No results found.');
-        await m.React("❌");
-        return;
-      }
+*Enviando ${additionalText}*
+⏰ Espere un momento`.trim()
+await conn.sendMessage(m.chat, { text: texto1, contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
 
+if (command == 'play') {	
+try {
+let q = '128kbps'
+let v = yt_play[0].url
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
+const dl_url = await yt.audio[q].download()
+const ttl = await yt.title
+const size = await yt.audio[q].fileSizeH
+await conn.sendMessage(m.chat, { audio: { url: dl_url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: ttl, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
+} catch {
 
-      videos.forEach((video, index) => {
-        const uniqueId = searchIndex + index;
-        searchResultsMap.set(uniqueId, video);
-      });
+try {
 
+const dataRE = await fetch(`https://api.akuari.my.id/downloader/youtube?link=${yt_play[0].url}`)
+const dataRET = await dataRE.json()
+await conn.sendMessage(m.chat, { audio: { url: dataRET.mp3[1].url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
+m.react(done) 
+} catch {
 
-      const currentResult = searchResultsMap.get(searchIndex);
-      const buttons = [
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "ᴀᴜᴅɪᴏ",
-            id: `media_audio_${searchIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "ᴠɪᴅᴇᴏ",
-            id: `media_video_${searchIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "ᴀᴜᴅɪᴏ ᴅᴏᴄᴜᴍᴇɴᴛ",
-            id: `media_audiodoc_${searchIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "ᴠɪᴅᴇᴏ ᴅᴏᴄᴜᴍᴇɴᴛ",
-            id: `media_videodoc_${searchIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "ɴᴇxᴛ",
-            id: `next_${searchIndex + 1}`
-          })
-        }
-      ];
+try {
 
-      const msg = generateWAMessageFromContent(m.from, {
-        viewOnceMessage: {
-          message: {
-            messageContextInfo: {
-              deviceListMetadata: {},
-              deviceListMetadataVersion: 2
-            },
-            interactiveMessage: proto.Message.InteractiveMessage.create({
-              body: proto.Message.InteractiveMessage.Body.create({
-                text: `YouTube Search\n\n*🔍Title:* ${currentResult.title}\n*✍️Author:* ${currentResult.author.name}\n*🥸 Views:* ${currentResult.views}\n*🏮 Duration:* ${currentResult.timestamp}\n`
-              }),
-              footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "> ©ʀᴇᴅ-ꜰᴏx-ᴍᴅ"
-              }),
-              header: proto.Message.InteractiveMessage.Header.create({
-                 ...(await prepareWAMessageMedia({ image: { url: `https://i.ibb.co/DgXWV3p/Picsart-24-06-23-20-21-28-866.png` } }, { upload: Fox.waUploadToServer })),
-                title: "",
-                gifPlayback: true,
-                subtitle: "",
-                hasMediaAttachment: false 
-              }),
-              
-              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                buttons
-              }),
-              contextInfo: {
-                mentionedJid: [m.sender],
-                forwardingScore: 9999,
-                isForwarded: true,
-              }
-            }),
-          },
-        },
-      }, {});
+let humanLol = await fetch(`https://api.lolhuman.xyz/api/ytplay?apikey=${lolkeysapi}&query=${yt_play[0].title}`)
+let humanRET = await humanLol.json()
+await conn.sendMessage(m.chat, { audio: { url: humanRET.result.audio.link }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: {title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })
+m.react(done)      
+} catch {
+   
+try {
 
-      await Fox.relayMessage(msg.key.remoteJid, msg.message, {
-        messageId: msg.key.id
-      });
-      await m.React("✅");
+let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+let lolh = await lolhuman.json()
+let n = lolh.result.title || 'error'
+m.react(done)
+await conn.sendMessage(m.chat, { audio: { url: lolh.result.link}, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: n, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
+} catch {
 
-      searchIndex += 1; 
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      m.reply('Error processing your request.');
-      await m.React("❌");
-    }
-  } else if (selectedId) { 
-    if (selectedId.startsWith('next_')) {
-      const nextIndex = parseInt(selectedId.replace('next_', ''));
-      const currentResult = searchResultsMap.get(nextIndex);
+try {
 
-      if (!currentResult) {
-        return m.reply('No more results.');
-      }
-      const buttons = [
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "🎧 Audio",
-            id: `media_audio_${nextIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "🎥 Video",
-            id: `media_video_${nextIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "🎵 Audio Document",
-            id: `media_audiodoc_${nextIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "🎦 Video Document",
-            id: `media_videodoc_${nextIndex}`
-          })
-        },
-        {
-          "name": "quick_reply",
-          "buttonParamsJson": JSON.stringify({
-            display_text: "⏩ Next",
-            id: `next_${nextIndex + 1}`
-          })
-        }
-      ];
+let searchh = await yts(yt_play[0].url)
+let __res = searchh.all.map(v => v).filter(v => v.type == "video")
+let infoo = await ytdl.getInfo('https://youtu.be/' + __res[0].videoId)
+let ress = await ytdl.chooseFormat(infoo.formats, { filter: 'audioonly' })
+m.react(done)
+await conn.sendMessage(m.chat, { audio: { url: ress.url }, mimetype: 'audio/mpeg', contextInfo: { externalAdReply: { title: __res[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: m })   
 
-      const msg = generateWAMessageFromContent(m.from, {
-        viewOnceMessage: {
-          message: {
-            messageContextInfo: {
-              deviceListMetadata: {},
-              deviceListMetadataVersion: 2
-            },
-            interactiveMessage: proto.Message.InteractiveMessage.create({
-              body: proto.Message.InteractiveMessage.Body.create({
-                text: `YouTube Search\n\n*🔍Title:* ${currentResult.title}\n*✍️ Author:* ${currentResult.author.name}\n*🥸 Views:* ${currentResult.views}\n*🏮 Duration:* ${currentResult.timestamp}\n`
-              }),
-              footer: proto.Message.InteractiveMessage.Footer.create({
-                text: "> ©ʀᴇᴅ-ꜰᴏx-ᴍᴅ"
-              }),
-              header: proto.Message.InteractiveMessage.Header.create({
-                 ...(await prepareWAMessageMedia({ image: { url: `https://i.ibb.co/DgXWV3p/Picsart-24-06-23-20-21-28-866.png` } }, { upload: Fox.waUploadToServer })),
-                title: "",
-                gifPlayback: true,
-                subtitle: "",
-                hasMediaAttachment: false 
-              }),
-              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-                buttons
-              }),
-              contextInfo: {
-                mentionedJid: [m.sender],
-                forwardingScore: 9999,
-                isForwarded: true,
-              }
-            }),
-          },
-        },
-      }, {});
+} catch {
+}}}}}
+} if (command == 'play2') {
+try {
+let qu = '360'
+let q = qu + 'p'
+let v = yt_play[0].url
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
+const dl_url = await yt.video[q].download()
+const ttl = await yt.title
+const size = await yt.video[q].fileSizeH
+m.react(done)
+await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `*Título*: ${ttl}\n*Peso:* ${size}`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+} catch {
 
-      await Fox.relayMessage(msg.key.remoteJid, msg.message, {
-        messageId: msg.key.id
-      });
-    } else if (selectedId.startsWith('media_')) {
-      const parts = selectedId.split('_');
-      const type = parts[1];
-      const key = parseInt(parts[2]);
-      const selectedMedia = searchResultsMap.get(key);
+try {
 
-      if (selectedMedia) {
-        try {
-          const videoUrl = selectedMedia.url;
-          let finalMediaBuffer, mimeType, content;
+let mediaa = await ytMp4(yt_play[0].url)
+m.react(done)
+await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: cred.toString('utf-8'), thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })     
+} catch {
 
-          const stream = ytdl(videoUrl, { filter: type === 'audio' || type === 'audiodoc' ? 'audioonly' : 'video' });
+try {
 
-          if (type === 'audio' || type === 'audiodoc') {
-            finalMediaBuffer = await getStreamBuffer(stream);
-            mimeType = 'audio/mp3';
-          } else {
-            finalMediaBuffer = await getStreamBuffer(stream);
-            mimeType = 'video/mp4';
-          }
+let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${yt_play[0].url}`)    
+let lolh = await lolhuman.json()
+let n = lolh.result.title || 'error'
+let n2 = lolh.result.link
+let n3 = lolh.result.size
+let n4 = lolh.result.thumbnail
+await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `*Titulo:* ${n}\n*Peso:* ${n3}`, thumbnail: await fetch(n4) }, { quoted: m })
+} catch {
+m.react(error)
+await conn.reply(m.chat, '🚩 *Ocurrió un fallo*', m, fake, ) }}}    
+}} catch {
+m.react(error)
+return conn.reply(m.chat, '🚩 *Inténtelo de nuevo*', m, fake, )}
 
-          const fileSizeInMB = finalMediaBuffer.length / (1024 * 1024);
+}
+handler.help = ['play', 'play2']
+handler.tags = ['descargas']
+handler.command = /^play2?$/i
 
-          if (type === 'audio' && fileSizeInMB <= 300) {
-            content = { audio: finalMediaBuffer, mimetype: 'audio/mpeg', caption: 'Downloaded by ʀɛɖ_ʄօӼ-ʍɖ' };
-          } else if (type === 'video' && fileSizeInMB <= 300) {
-            content = { video: finalMediaBuffer, mimetype: 'video/mp4', caption: 'Downloaded by ʀɛɖ_ʄօӼ-ʍɖ' };
-          } else if (type === 'audiodoc') {
-            content = { document: finalMediaBuffer, mimetype: 'audio/mp3', fileName: `${selectedMedia.title}.mp3` };
-          } else if (type === 'videodoc') {
-            content = { document: finalMediaBuffer, mimetype: 'video/mp4', fileName: `${selectedMedia.title}.mp4`, caption: `Downloading video: ${selectedMedia.title}` };
-          }
+handler.register = true
+handler.limit = true
 
-          await Fox.sendMessage(m.from, content, { quoted: m });
-        } catch (error) {
-          console.error("Error processing your request:", error);
-          m.reply('Error processing your request.');
-          await m.React("❌");
-        }
-      }
-    }
-  }
-};
+export default handler
 
-const getStreamBuffer = async (stream) => {
-  const chunks = [];
-  return new Promise((resolve, reject) => {
-    stream.on('data', chunk => chunks.push(chunk));
-    stream.on('end', () => resolve(Buffer.concat(chunks)));
-    stream.on('error', err => reject(err));
-  });
-};
+async function search(query, options = {}) {
+const search = await yts.search({ query, hl: 'es', gl: 'ES', ...options })
+return search.videos}
 
-export default playcommand;
+function MilesNumber(number) {
+const exp = /(\d)(?=(\d{3})+(?!\d))/g
+const rep = '$1.'
+let arr = number.toString().split(".")
+arr[0] = arr[0].replace(exp, rep)
+return arr[1] ? arr.join('.') : arr[0]}
+
+function secondString(seconds) {
+seconds = Number(seconds)
+var d = Math.floor(seconds / (3600 * 24))
+var h = Math.floor((seconds % (3600 * 24)) / 3600)
+var m = Math.floor((seconds % 3600) / 60)
+var s = Math.floor(seconds % 60)
+var dDisplay = d > 0 ? d + (d == 1 ? ' día, ' : ' días, ') : ''
+var hDisplay = h > 0 ? h + (h == 1 ? " hora, " : " horas, ") : ''
+var mDisplay = m > 0 ? m + (m == 1 ? " minuto, " : " minutos, ") : ''
+var sDisplay = s > 0 ? s + (s == 1 ? ' segundo' : ' segundos') : ''
+return dDisplay + hDisplay + mDisplay + sDisplay}
+
+function bytesToSize(bytes) {
+return new Promise((resolve, reject) => {
+const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+if (bytes === 0) return 'n/a'
+const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10)
+if (i === 0) resolve(`${bytes} ${sizes[i]}`);
+resolve(`${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`)})}
+
+async function ytMp3(url) {
+return new Promise((resolve, reject) => {
+ytdl.getInfo(url).then(async(getUrl) => {
+let result = []
+for(let i = 0; i < getUrl.formats.length; i++) {
+let item = getUrl.formats[i]
+if (item.mimeType == 'audio/webm; codecs=\"opus\"') {
+let { contentLength } = item
+let bytes = await bytesToSize(contentLength)
+result[i] = { audio: item.url, size: bytes }}}
+let resultFix = result.filter(x => x.audio != undefined && x.size != undefined) 
+let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].audio}`)
+let tinyUrl = tiny.data;
+let title = getUrl.videoDetails.title;
+let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url
+resolve({ title, result: tinyUrl, result2: resultFix, thumb })}).catch(reject)})}
+
+async function ytMp4(url) {
+return new Promise(async(resolve, reject) => {
+ytdl.getInfo(url).then(async(getUrl) => {
+let result = []
+for(let i = 0; i < getUrl.formats.length; i++) {
+let item = getUrl.formats[i]
+if (item.container == 'mp4' && item.hasVideo == true && item.hasAudio == true) {
+let { qualityLabel, contentLength } = item
+let bytes = await bytesToSize(contentLength)
+result[i] = { video: item.url, quality: qualityLabel, size: bytes }}}
+let resultFix = result.filter(x => x.video != undefined && x.size != undefined && x.quality != undefined) 
+let tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].video}`)
+let tinyUrl = tiny.data
+let title = getUrl.videoDetails.title
+let thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url
+resolve({ title, result: tinyUrl, rersult2: resultFix[0].video, thumb })}).catch(reject)})}
+
+async function ytPlay(query) {
+return new Promise((resolve, reject) => {
+yts(query).then(async(getData) => {
+let result = getData.videos.slice( 0, 5 )
+let url = []
+for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
+let random = url[0]
+let getAudio = await ytMp3(random)
+resolve(getAudio)}).catch(reject)})}
+
+async function ytPlayVid(query) {
+return new Promise((resolve, reject) => {
+yts(query).then(async(getData) => {
+let result = getData.videos.slice( 0, 5 )
+let url = []
+for (let i = 0; i < result.length; i++) { url.push(result[i].url) }
+let random = url[0]
+let getVideo = await ytMp4(random)
+resolve(getVideo)}).catch(reject)})}
