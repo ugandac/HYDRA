@@ -44,7 +44,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
     },
   }
   const infoText = `
- ▒▓   𝐇𝐘𝐃𝐑𝐀   ▓▒
+ ▒▓   𝐀𝐕𝐈𝐀𝐓𝐎𝐑   ▓▒
 - Hii ${name} user
    ⧳═══☙ʜʏᴅʀᴀ☙═⧳
 ❏📚 *Mode:* ${mode}
@@ -77,9 +77,9 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       },
       forwardingScore: 999,
       externalAdReply: {
-        title: 'ᚙʜʏᴅʀᴀᚙ',
+        title: 'ᚙAVIATOR BOTᚙ',
         body: 'ᴀʀʟᴏᴅʀᴀɢᴏɴ',
-        thumbnailUrl: 'https://i.imgur.com/FKxIhdU.jpeg',
+        thumbnailUrl: 'https://i.imgur.com/ic4Rii3.jpeg',
         sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
         renderLargerThumbnail: false,
@@ -231,7 +231,7 @@ handler.before = async (m, { conn }) => {
 
 handler.help = ['play']
 handler.tags = ['downloader']
-handler.command = /^(menu)$/i
+handler.command = /^(av)$/i
 handler.limit = true
 export default handler
 
