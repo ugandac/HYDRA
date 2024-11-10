@@ -6,8 +6,8 @@ let handler = async (m, { conn }) => {
   let fgg = {
     key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
     message: {
-      contactMessage: {
-        displayName: `HYDRA`,
+      Message: {
+        displayName: `⫷⫸𝐩𝐫𝐞𝐝𝐢𝐜𝐭𝐨𝐫⫷⫸`,
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:'HYDRA'\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
       },
     },
@@ -26,7 +26,9 @@ let handler = async (m, { conn }) => {
           key: pingMsg.key,
           type: 14,
           editedMessage: {
-            conversation: `aviator predictor🚀: ${latency} you need superior assistance to complete this information 💯`,
+            conversation: `aviator predictor🚀
+            Next aviator limit⇢${latency} 
+            you need superior assistance to complete this information 💯`,
           },
         },
       },
