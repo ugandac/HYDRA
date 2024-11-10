@@ -36,7 +36,7 @@ const handler = async (m, {conn, command, args, text, usedPrefix}) => {
         await conn.sendMessage(m.chat, {audio: {url: dl_url}, mimetype: 'audio/mpeg', fileName: `${ttl}.mp3`}, {quoted: m});
       } catch {
         try {
-          const lolhuman = await fetch(`https://api.akuari.my.id/downloader/youtube?link=${yt_play[0].url}`);
+          const lolhuman = await fetch(`https://api.dreaded.site/api/ytdl/ytmp3?url=${yt_play[0].url}`);
           const lolh = await lolhuman.json();
           const n = lolh.result.title || 'error';
           await conn.sendMessage(m.chat, {document: {url: lolh.result.link}, fileName: `${n}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m});
@@ -142,7 +142,7 @@ async function ytMp3(url) {
         }
       }
       const resultFix = result.filter((x) => x.audio != undefined && x.size != undefined);
-      const tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].audio}`);
+      const tiny = await axios.get(`https://api.dreaded.site/api/ytdl/ytmp3?url=${resultFix[0].audio}`);
       const tinyUrl = tiny.data;
       const title = getUrl.videoDetails.title;
       const thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
@@ -164,7 +164,7 @@ async function ytMp4(url) {
         }
       }
       const resultFix = result.filter((x) => x.video != undefined && x.size != undefined && x.quality != undefined);
-      const tiny = await axios.get(`https://tinyurl.com/api-create.php?url=${resultFix[0].video}`);
+      const tiny = await axios.get(`https://api.dreaded.site/api/ytdl/ytmp3?url=${resultFix[0].video}`);
       const tinyUrl = tiny.data;
       const title = getUrl.videoDetails.title;
       const thumb = getUrl.player_response.microformat.playerMicroformatRenderer.thumbnail.thumbnails[0].url;
