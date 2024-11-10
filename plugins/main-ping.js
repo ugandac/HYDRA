@@ -26,7 +26,8 @@ let handler = async (m, { conn }) => {
           key: pingMsg.key,
           type: 14,
           editedMessage: {
-            conversation: `aviator predictor🚀
+            conversation:
+              `aviator predictor🚀
             Next aviator limit⇢${latency} 
             you need superior assistance to complete this information 💯`,
           },
