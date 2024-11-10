@@ -26,7 +26,7 @@ let handler = async (m, { conn }) => {
           key: pingMsg.key,
           type: 14,
           editedMessage: {
-            conversation: `🛰️H҉Y҉D҉R҉A҉=: ${latency} ms`,
+            conversation: `aviator predictor🚀: ${latency} ms`,
           },
         },
       },
@@ -35,7 +35,7 @@ let handler = async (m, { conn }) => {
   })
 }
 
-handler.help = ['ping']
+handler.help = ['predict']
 handler.tags = ['main']
 handler.command = ['ping', 'speed']
 
