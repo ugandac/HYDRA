@@ -48,8 +48,8 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 - Hii ${name} user
    ⧳═══☙ʜʏᴅʀᴀ☙═⧳
 ❏📚 *Mode:* ${mode}
-❏💻 *Platform:* ${platform}
-❏🌐 *Baileys:* Multi Device
+❏💻 *Platform:* 𝗔𝗩𝗜𝗔𝗧𝗢𝗥 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥
+❏🌐 *Baileys:* AVIATOR 
 ❏🔓 *Prefix:* [ *${usedPrefix}* ]
 ❐🕰️ *Uptime:* ${muptime}
 ❏🗂️ *Database:*  ${totalreg}
@@ -59,8 +59,9 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 │ *${totalfeatures}* Commands
 ╰──────────⧱
   ⧪═══════════════⧭
-▒ 🛰️ɢᴘᴛ
-▒🚀ᴅᴏᴡɴʟᴏᴀᴅᴇʀ
+▒ 🛰️ 𝙿𝚁𝙴𝙳𝙸𝙲𝚃
+▒🚀𝙿𝙰𝚈𝙼𝙴𝙽𝚃
+⌘ 
 ᴛʜɪꜱ ᴍᴇɴᴜ ɪꜱ ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ⌛
    ⧪══════════════⧭
  `
