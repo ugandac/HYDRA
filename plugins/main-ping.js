@@ -28,7 +28,7 @@ let handler = async (m, { conn }) => {
           editedMessage: {
             conversation:
               `aviator predictor🚀
-            Next aviator limit⇢${latency}🔐
+            Next limit⇢${latency}🔐
             you need superior assistance to complete this information 💯`,
           },
         },
