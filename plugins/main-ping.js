@@ -27,8 +27,7 @@ let handler = async (m, { conn }) => {
           type: 14,
           editedMessage: {
             conversation:
-              `𝖕𝖔𝖓𝖌
-            Next limit⇢${latency}🔐
+              `𝖕𝖔𝖓𝖌ᴥ︎︎︎${latency}🔐
             𝕲𝖔𝖔𝖉 𝖙𝖍𝖎𝖓𝖌𝖘 𝖙𝖆𝖐𝖊𝖘 𝖙𝖎𝖒𝖊🖤`,
           },
         },
