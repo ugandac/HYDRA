@@ -44,12 +44,12 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
     },
   }
   const infoText = `
- ▒▓   𝐀𝐕𝐈𝐀𝐓𝐎𝐑   ▓▒
+ ▒▓   𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓   ▓▒
 - Hii ${name} user
    ⧳═══☙ʜʏᴅʀᴀ☙═⧳
 ❏📚 *Mode:* ${mode}
-❏💻 *Platform:* 𝗔𝗩𝗜𝗔𝗧𝗢𝗥 𝗣𝗥𝗘𝗗𝗜𝗖𝗧𝗢𝗥
-❏🌐 *Baileys:* AVIATOR 
+❏💻 *Platform:* 𝖜𝖆𝖇𝖔𝖙
+❏🌐 *Baileys:* 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓-𝖇𝖆𝖎𝖑𝖊𝖞𝖘 
 ❏🔓 *Prefix:* [ *${usedPrefix}* ]
 ❐🕰️ *Uptime:* ${muptime}
 ❏🗂️ *Database:*  ${totalreg}
@@ -59,8 +59,8 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
 │ *${totalfeatures}* Commands
 ╰──────────⧱
   ⧪═══════════════⧭
-▒ 🛰️ 𝙿𝚁𝙴𝙳𝙸𝙲𝚃
-▒🚀𝙿𝙰𝚈𝙼𝙴𝙽𝚃
+▒ 🛰️ 𝖕𝖎𝖓𝖌
+▒🚀 𝖒𝖊𝖓𝖚
 ⌘ 
 ᴛʜɪꜱ ᴍᴇɴᴜ ɪꜱ ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ⌛
    ⧪══════════════⧭
