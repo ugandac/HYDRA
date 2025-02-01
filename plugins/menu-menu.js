@@ -77,7 +77,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       },
       forwardingScore: 999,
       externalAdReply: {
-        title: 'ᚙAVIATOR BOTᚙ',
+        title: 'ᚙ𝖉𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖉 𝖇𝖞 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓ᚙ',
         body: 'ᴀʀʟᴏᴅʀᴀɢᴏɴ',
         thumbnailUrl: 'https://i.imgur.com/dkKqGOv.jpeg',
         sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
