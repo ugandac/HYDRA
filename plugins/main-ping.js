@@ -29,7 +29,7 @@ let handler = async (m, { conn }) => {
             conversation:
               `𝖕𝖔𝖓𝖌
             Next limit⇢${latency}🔐
-            you need superior assistance to complete this information 💯`,
+            𝕲𝖔𝖔𝖉 𝖙𝖍𝖎𝖓𝖌𝖘 𝖙𝖆𝖐𝖊𝖘 𝖙𝖎𝖒𝖊🖤`,
           },
         },
       },
@@ -38,8 +38,8 @@ let handler = async (m, { conn }) => {
   })
 }
 
-handler.help = ['predict']
+handler.help = ['ping']
 handler.tags = ['main']
-handler.command = ['predict', 'speed']
+handler.command = ['ping', 'speed']
 
 export default handler
