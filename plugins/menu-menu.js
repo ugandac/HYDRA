@@ -79,7 +79,7 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       externalAdReply: {
         title: 'ᚙAVIATOR BOTᚙ',
         body: 'ᴀʀʟᴏᴅʀᴀɢᴏɴ',
-        thumbnailUrl: 'https://i.imgur.com/ic4Rii3.jpeg',
+        thumbnailUrl: 'https://i.imgur.com/dkKqGOv.jpeg',
         sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
         renderLargerThumbnail: false,
@@ -113,13 +113,13 @@ handler.before = async (m, { conn }) => {
   if (choice === '1') {
     await conn.sendMessage(
       m.chat,
-      { image: { url: 'https://i.imgur.com/6wdhrq9.jpeg' }, caption: botmenu },
+      { image: { url: 'https://i.imgur.com/dkKqGOv.jpeg' }, caption: botmenu },
       { quoted: fcontact }
     )
   } else if (choice === '2') {
     await conn.sendMessage(
       m.chat,
-      { image: { url: 'https://i.imgur.com/Z5R5fvO.jpeg' }, caption: ownermenu },
+      { image: { url: 'https://i.imgur.com/dkKqGOv.jpeg' }, caption: ownermenu },
       { quoted: fcontact }
     )
   } else if (choice === '3') {
