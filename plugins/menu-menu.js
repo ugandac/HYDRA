@@ -231,7 +231,7 @@ handler.before = async (m, { conn }) => {
 
 handler.help = ['play']
 handler.tags = ['downloader']
-handler.command = /^(av)$/i
+handler.command = /^(menu)$/i
 handler.limit = true
 export default handler
 
