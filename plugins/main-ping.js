@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     key: { fromMe: false, participant: `0@s.whatsapp.net`, remoteJid: 'status@broadcast' },
     message: {
       contactMessage: {
-        displayName: `✰𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓✰`,
+        displayName: `❦︎𝘽𝙀𝙉𝙎𝙊𝙉 𝙏𝙀𝘾𝙃𝙉𝙊𝙇𝙊𝙂𝙔❦︎`,
         vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:'HYDRA'\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
       },
     },
@@ -27,8 +27,8 @@ let handler = async (m, { conn }) => {
           type: 14,
           editedMessage: {
             conversation:
-              `𝖕𝖔𝖓𝖌ᴥ︎︎︎${latency}🔐
-            𝕲𝖔𝖔𝖉 𝖙𝖍𝖎𝖓𝖌𝖘 𝖙𝖆𝖐𝖊𝖘 𝖙𝖎𝖒𝖊🖤`,
+              `ᴥ︎︎︎ʙᴇɴsᴏɴ-ᴀɪᴥ︎︎︎${latency}🔐
+               𝖉𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖉 𝖇𝖞 𝕭𝖊𝖓𝖘𝖔𝖓𝖙𝖊𝖈𝖍-𝖙𝖟`,
           },
         },
       },
