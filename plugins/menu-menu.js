@@ -44,25 +44,25 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
     },
   }
   const infoText = `
- ▒▓   𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓   ▓▒
+ ▒▓   𝐁𝐄𝐍𝐒𝐎𝐍 𝐓𝐄𝐂𝐇   ▓▒
 - Hii ${name} user
-   ⧳═══☙ʜʏᴅʀᴀ☙═⧳
+   ⧳═══☙ `BENSONTECH` ☙═⧳
 ❏📚 *Mode:* ${mode}
-❏💻 *Platform:* 𝖜𝖆𝖇𝖔𝖙
-❏🌐 *Baileys:* 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓-𝖇𝖆𝖎𝖑𝖊𝖞𝖘 
+❏💻 *Platform:*𝐍𝐨𝐝𝐞𝐣𝐬
+❏🌐 *Baileys:* 𝙱𝚎𝚗𝚜𝚘𝚗-𝚋𝚊𝚒𝚕𝚎𝚢𝚜 
 ❏🔓 *Prefix:* [ *${usedPrefix}* ]
 ❐🕰️ *Uptime:* ${muptime}
 ❏🗂️ *Database:*  ${totalreg}
    ⧱════════════⧱
-> ©ᴀʀʟᴏᴅʀᴀɢᴏɴ
-֎───᚛ᚔʜʏᴅʀᴀɪɴꜰᴏᚔ᚜───֎
+> ©𝐁𝐄𝐍𝐒𝐎𝐍
+֎───᚛ᚔBOTINFOᚔ᚜───֎
 │ *${totalfeatures}* Commands
 ╰──────────⧱
   ⧪═══════════════⧭
 ▒ 🛰️ 𝖕𝖎𝖓𝖌
 ▒🚀 𝖒𝖊𝖓𝖚
 ⌘ 
-ᴛʜɪꜱ ᴍᴇɴᴜ ɪꜱ ᴜɴᴅᴇʀ ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ⌛
+`𝐀𝐈-𝐖𝐇𝐀𝐓𝐒𝐀𝐏𝐏 𝐁𝐎𝐓 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐃 𝐁𝐘 𝐁𝐄𝐍𝐒𝐎𝐍-𝐓𝐄𝐂𝐇⌛`
    ⧪══════════════⧭
  `
   const { result, key, timeout } = await conn.sendMessage(
@@ -77,9 +77,9 @@ const handler = async (m, { conn, command, text, args, usedPrefix }) => {
       },
       forwardingScore: 999,
       externalAdReply: {
-        title: 'ᚙ𝖉𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖉 𝖇𝖞 𝕬𝖗𝖑𝖔𝖉𝖗𝖆𝖌𝖔𝖓ᚙ',
+        title: 'ᚙ𝖉𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖉 𝖇𝖞 Bensonᚙ',
         body: 'ᴀʀʟᴏᴅʀᴀɢᴏɴ',
-        thumbnailUrl: 'https://i.imgur.com/dkKqGOv.jpeg',
+        thumbnailUrl: 'https://files.catbox.moe/5neqle.jpg',
         sourceUrl: 'https://whatsapp.com/channel/0029VaNPPwR30LKQk437x51Q',
         mediaType: 1,
         renderLargerThumbnail: false,
@@ -113,7 +113,7 @@ handler.before = async (m, { conn }) => {
   if (choice === '1') {
     await conn.sendMessage(
       m.chat,
-      { image: { url: 'https://i.imgur.com/dkKqGOv.jpeg' }, caption: botmenu },
+      { image: { url: 'https://files.catbox.moe/5neqle.jpg' }, caption: botmenu },
       { quoted: fcontact }
     )
   } else if (choice === '2') {
